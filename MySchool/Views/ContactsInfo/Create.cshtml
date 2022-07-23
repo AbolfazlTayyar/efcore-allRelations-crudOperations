@@ -1,0 +1,19 @@
+﻿@model AddContactInfoVM
+
+<form asp-action="Create">
+	<!-- Email input -->
+	<div class="form-outline mb-4">
+		<label asp-for="PhoneNumber"></label><br />
+		<input asp-for="PhoneNumber"/>
+	</div>
+	<div class="form-outline mb-4">
+		<label asp-for="City"></label><br />
+		<input asp-for="City"/>
+	</div>
+	<div class="form-outline mb-4">
+		<label asp-for="StudentId"></label><br />
+		<select asp-for="StudentId" asp-items="ViewBag.Students"></select>
+	</div>
+	<!-- Submit button -->
+	<input type="submit" value="Create" class="btn btn-primary" />
+</form>

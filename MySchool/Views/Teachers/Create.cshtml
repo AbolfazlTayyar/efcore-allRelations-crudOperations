@@ -1,0 +1,11 @@
+﻿@model Teacher
+
+<form asp-action="Create">
+	<!-- Email input -->
+	<div class="form-outline mb-4">
+		<label asp-for="Name"></label><br />
+		<input asp-for="Name"/>
+	</div>
+	<!-- Submit button -->
+	<input type="submit" value="Create" class="btn btn-primary" />
+</form>

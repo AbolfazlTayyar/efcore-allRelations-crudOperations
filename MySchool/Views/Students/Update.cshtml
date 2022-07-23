@@ -1,0 +1,27 @@
+﻿@model AddStudentVM
+
+<form asp-action="Update">
+	<!-- Email input -->
+	<div class="form-outline mb-4">
+		<label asp-for="FirstName"></label><br />
+		<input asp-for="FirstName" />
+	</div>
+	<div class="form-outline mb-4">
+		<label asp-for="LastName"></label><br />
+		<input asp-for="LastName" />
+	</div>
+	<div class="form-outline mb-4">
+		<label asp-for="DateOfBirth"></label><br />
+		<input asp-for="DateOfBirth" />
+	</div>
+	<div class="form-outline mb-4">
+		<label asp-for="TeacherId"></label><br />
+		<select asp-for="TeacherId" asp-items="ViewBag.Teachers"></select>
+	</div>
+	<div class="form-outline mb-4">
+		<label asp-for="CourseIds"></label><br />
+		<select asp-for="CourseIds" asp-items="ViewBag.Courses" multiple></select>
+	</div>
+	<!-- Submit button -->
+	<input type="submit" value="Update" class="btn btn-primary" />
+</form>

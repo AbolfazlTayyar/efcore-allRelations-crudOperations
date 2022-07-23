@@ -1,0 +1,29 @@
+﻿@model IEnumerable<ContactInfo>
+
+<table class="table">
+	<thead>
+		<tr>
+			<th scope="col">#</th>
+			<th scope="col">PhoneNumber</th>
+			<th scope="col">City</th>
+			<th scope="col">Student</th>
+			<th scope="col">Operations</th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var item in Model)
+		{
+			<tr>
+				<th scope="row">@item.Id</th>
+				<td>@item.PhoneNumber</td>
+				<td>@item.City</td>
+				<td>@item.Student.FirstName @item.Student.LastName</td>
+				<td>
+					<a asp-action="Update" asp-route-id="@item.Id" type="button" class="btn btn-secondary">Update</a> |
+					<a asp-action="Delete" asp-route-id="@item.Id" type="button" class="btn btn-danger">Delete</a>
+				</td>
+			</tr>
+		}
+	</tbody>
+</table>
+<a asp-action="Create" type="button" class="btn btn-primary">Create</a>
